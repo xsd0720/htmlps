@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>  
+<html>  
+  
+<body>  
+  
+<canvas id="myCanvas" width="800" height="100" style="border:1px solid #c3c3c3;">  
+Your browser does not support the canvas element.  
+</canvas>  
+  
+<script type="text/javascript">  
+  
+var c=document.getElementById("myCanvas");  
+var cxt=c.getContext("2d");  
+var img=new Image()  
+img.src="img/abc.jpg";  
+img.onload = function () //确保图片已经加载完毕  
+{  
+    
+    cxt.drawImage(img, 0, 0);  
+    resize(img.width, img.height);
+
+}  
+  
+<canvas id="myCanvas" width="800" height="500" style="border:1px solid #000;"> 您的浏览器不支持canvas!</canvas><br />
+<input type="button" value="小" onclick="resize(500,400)" />
+<input type="button" value="大" onclick="resize(900,600)" />
+<script type="text/javascript">
+var canvas = document.getElementById("myCanvas");
+var cxt = canvas.getContext("2d");
+cxt.strokeStyle = "#ff8040";
+cxt.fillStyle = "#0000ff";
+cxt.arc(100,100,50,0,2*Math.PI,true);
+cxt.fill();
+cxt.strokeRect(30,20,100,150);
+ 
+function resize(w,h)
+{
+    var nc = document.createElement("canvas");
+    nc.width = canvas.width;
+    nc.height = canvas.height;
+    nc.getContext("2d").drawImage(canvas,0,0);
+    canvas.width = w;
+    canvas.height = h;
+    cxt.drawImage(nc,0,0);
+}
+</script>
+function resize(w,h)
+{
+    var imgData = cxt.getImageData(0,0,canvas.width,canvas.height);
+    canvas.width = w;
+    canvas.height = h;
+    cxt.putImageData(imgData,0,0);
+}
+
+</script>  
+  
+</body>  
+</html>  
+<canvas id="myCanvas" width="800" height="500" style="border:1px solid #000;"> 您的浏览器不支持canvas!</canvas><br />
+<input type="button" value="小" onclick="resize(500,400)" />
+<input type="button" value="大" onclick="resize(900,600)" />
+<script type="text/javascript">
+var canvas = document.getElementById("myCanvas");
+var cxt = canvas.getContext("2d");
+cxt.strokeStyle = "#ff8040";
+cxt.fillStyle = "#0000ff";
+cxt.arc(100,100,50,0,2*Math.PI,true);
+cxt.fill();
+cxt.strokeRect(30,20,100,150);
+ 
+function resize(w,h)
+{
+    var nc = document.createElement("canvas");
+    nc.width = canvas.width;
+    nc.height = canvas.height;
+    nc.getContext("2d").drawImage(canvas,0,0);
+    canvas.width = w;
+    canvas.height = h;
+    cxt.drawImage(nc,0,0);
+}
+</script>
+
+<canvas id="myCanvas" width="800" height="500" style="border:1px solid #000;"> 您的浏览器不支持canvas!</canvas><br />
+<input type="button" value="小" onclick="resize(500,400)" />
+<input type="button" value="大" onclick="resize(900,600)" />
+<script type="text/javascript">
+var canvas = document.getElementById("myCanvas");
+var cxt = canvas.getContext("2d");
+cxt.strokeStyle = "#ff8040";
+cxt.fillStyle = "#0000ff";
+cxt.arc(100,100,50,0,2*Math.PI,true);
+cxt.fill();
+cxt.strokeRect(30,20,100,150);
+ 
+function resize(w,h)
+{
+    var imgData = cxt.getImageData(0,0,canvas.width,canvas.height);
+    canvas.width = w;
+    canvas.height = h;
+    cxt.putImageData(imgData,0,0);
+}
+</script>
